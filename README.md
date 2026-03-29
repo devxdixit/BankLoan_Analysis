@@ -1,37 +1,57 @@
 # Bank Loan Analysis using SQL & Tableau
 
-## 📌 Project Overview
-This project presents an end-to-end **Bank Loan Analysis** using **SQL for data analysis** and **Tableau for visualization**.  
-The objective is to monitor lending performance, analyze borrower behavior, and evaluate portfolio health using real-world banking KPIs.
+## Project Overview
+This project presents an end-to-end **Bank Loan Analysis** using **SQL for data analysis** and **Tableau for data visualization**.  
+The objective is to monitor lending performance, analyze borrower behavior, and evaluate loan portfolio health using real-world banking KPIs.
 
-The project covers:
+The analysis focuses on:
 - Loan application trends
 - Funded vs received amounts
-- Interest rate & DTI analysis
+- Interest rate and DTI evaluation
 - Good Loan vs Bad Loan classification
-- Region, purpose, term, and employment-based insights
+- Insights by region, loan purpose, term, and employment length
 
 ---
 
-## 🎯 Business Problem
-Banks need a consolidated reporting system to:
+## Business Problem
+Banks require a consolidated reporting system to:
 - Track loan performance over time
 - Identify high-risk and low-risk loans
 - Monitor repayment behavior
-- Support data-driven lending decisions
+- Enable data-driven lending decisions
 
-This project solves that by creating **SQL-driven KPIs** and **interactive Tableau dashboards**.
+This project addresses these requirements through **SQL-driven KPIs** and **interactive Tableau dashboards**.
 
 ---
 
-## 🛠 Tools & Technologies
-- **SQL** – KPI calculations & data aggregation  
-- **Tableau Public** – Interactive dashboards  
+## Tools & Technologies
+- **SQL** – KPI calculations and aggregations  
+- **Tableau Public** – Interactive dashboards and data storytelling  
 - **CSV Dataset** – Bank loan data  
 
 ---
 
-## 📊 Key KPIs Calculated
+## Dataset Information
+- **File Name:** `financial_loan.csv`
+- **Data Type:** Structured loan-level data
+- **Granularity:** One row per loan application
+
+### Key Columns
+- `id` – Loan ID  
+- `issue_date` – Loan issue date  
+- `loan_amount` – Funded loan amount  
+- `total_payment` – Amount received from borrower  
+- `int_rate` – Interest rate  
+- `dti` – Debt-to-Income ratio  
+- `loan_status` – Fully Paid / Current / Charged Off  
+- `term` – Loan duration  
+- `emp_length` – Employment length  
+- `purpose` – Loan purpose  
+- `address_state` – Borrower state  
+
+---
+
+## Key KPIs Calculated
 - Total Loan Applications  
 - Month-to-Date (MTD) Loan Applications  
 - Previous Month-to-Date (PMTD) Applications  
@@ -39,13 +59,15 @@ This project solves that by creating **SQL-driven KPIs** and **interactive Table
 - Total Amount Received  
 - Average Interest Rate  
 - Average Debt-to-Income Ratio (DTI)  
-- Good Loan vs Bad Loan Percentage  
+- Good Loan Percentage  
+- Bad Loan Percentage  
 
 ---
 
-## 🧮 Complete SQL Queries Used
+## SQL Queries Used
 
 ```sql
+-- View data
 SELECT * FROM bank_loan_data;
 
 -- Total Loan Applications
@@ -64,16 +86,6 @@ WHERE MONTH(issue_date) = 11;
 -- Total Funded Amount
 SELECT SUM(loan_amount) AS Total_Funded_Amount
 FROM bank_loan_data;
-
--- MTD Funded Amount
-SELECT SUM(loan_amount) AS MTD_Funded_Amount
-FROM bank_loan_data
-WHERE MONTH(issue_date) = 12;
-
--- PMTD Funded Amount
-SELECT SUM(loan_amount) AS PMTD_Funded_Amount
-FROM bank_loan_data
-WHERE MONTH(issue_date) = 11;
 
 -- Total Amount Received
 SELECT SUM(total_payment) AS Total_Amount_Received
@@ -156,79 +168,3 @@ SUM(loan_amount) AS Funded_Amount,
 SUM(total_payment) AS Amount_Received
 FROM bank_loan_data
 GROUP BY purpose;
-
-# Bank Loan Analysis – Tableau Dashboard
-
-## Tableau Dashboard Information
-- Tool: Tableau Public
-- Data Source: financial_loan.csv
-- Calculated Fields:
-  - Month-to-Date (MTD)
-  - Previous Month-to-Date (PMTD)
-  - Month-over-Month (MoM) Growth
-  - Good Loan vs Bad Loan Classification Logic
-
----
-
-## Dashboards Created
-
-### Dashboard 1: Summary
-This dashboard provides a high-level overview of loan performance.
-- KPI Cards
-- Total Loan Applications
-- Total Funded Amount
-- Total Amount Received
-- Average Interest Rate
-- Average Debt-to-Income Ratio (DTI)
-- Good Loan vs Bad Loan comparison
-
----
-
-### Dashboard 2: Overview
-This dashboard focuses on trend-based and categorical insights.
-- Monthly Loan Trend (Line Chart)
-- State-wise Loan Distribution (Filled Map)
-- Loan Term Analysis (Donut Chart)
-- Employment Length Analysis (Bar Chart)
-- Loan Purpose Breakdown (Bar Chart)
-- Home Ownership Analysis (Tree Map)
-
----
-
-### Dashboard 3: Details
-This dashboard provides detailed, loan-level analysis.
-- Complete loan-level tabular data
-- Filters available for:
-  - Loan Status
-  - State
-  - Loan Purpose
-  - Loan Term
-
----
-
-## Tableau Public Dashboard Link
-View Live Dashboard:  
-https://public.tableau.com/app/profile/dev.dixit2546/viz/BankLoanReport_17747909445300/DETAIL?publish=yes
-
----
-
-## Key Insights
-- Majority of loans are Fully Paid or Current
-- Charged-off loans represent higher financial risk
-- Certain states contribute most to overall loan volume
-- Debt Consolidation is the most common loan purpose
-- Borrowers with longer employment length show better repayment patterns
-
----
-
-## Author
-Dev Dixit  
-B.Tech – Computer Science  
-Skills: SQL, Tableau, Data Analytics
-
----
-
-## License
-This project is licensed under the MIT License.
-
-
