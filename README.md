@@ -60,7 +60,53 @@ This project addresses these requirements through **SQL-driven KPIs** and **inte
 - Average Interest Rate  
 - Average Debt-to-Income Ratio (DTI)  
 - Good Loan Percentage  
-- Bad Loan Percentage  
+- Bad Loan Percentage
+
+## Tableau Dashboard
+
+### Tableau Dashboard Information
+- Tool: Tableau Public
+- Data Source: financial_loan.csv
+- Calculated Fields:
+  - Month-to-Date (MTD)
+  - Previous Month-to-Date (PMTD)
+  - Month-over-Month (MoM) Growth
+  - Good Loan vs Bad Loan Classification Logic
+
+---
+
+### Dashboards Created
+
+#### Dashboard 1: Summary
+- KPI Cards
+- Total Loan Applications
+- Total Funded Amount
+- Total Amount Received
+- Average Interest Rate
+- Average Debt-to-Income Ratio (DTI)
+- Good Loan vs Bad Loan comparison
+
+#### Dashboard 2: Overview
+- Monthly Loan Trend (Line Chart)
+- State-wise Loan Distribution (Filled Map)
+- Loan Term Analysis (Donut Chart)
+- Employment Length Analysis (Bar Chart)
+- Loan Purpose Breakdown (Bar Chart)
+- Home Ownership Analysis (Tree Map)
+
+#### Dashboard 3: Details
+- Complete loan-level tabular data
+- Filters for:
+  - Loan Status
+  - State
+  - Loan Purpose
+  - Loan Term
+
+---
+
+### Tableau Public Dashboard Link
+View Live Dashboard:  
+https://public.tableau.com/app/profile/dev.dixit2546/viz/BankLoanReport_17747909445300/DETAIL?publish=yes
 
 ---
 
@@ -109,48 +155,5 @@ SELECT
 (COUNT(CASE WHEN loan_status = 'Charged Off' THEN id END) * 100.0)
 / COUNT(id) AS Bad_Loan_Percentage
 FROM bank_loan_data;
-## Tableau Dashboard
 
-### Tableau Dashboard Information
-- Tool: Tableau Public
-- Data Source: financial_loan.csv
-- Calculated Fields:
-  - Month-to-Date (MTD)
-  - Previous Month-to-Date (PMTD)
-  - Month-over-Month (MoM) Growth
-  - Good Loan vs Bad Loan Classification Logic
 
----
-
-### Dashboards Created
-
-#### Dashboard 1: Summary
-- KPI Cards
-- Total Loan Applications
-- Total Funded Amount
-- Total Amount Received
-- Average Interest Rate
-- Average Debt-to-Income Ratio (DTI)
-- Good Loan vs Bad Loan comparison
-
-#### Dashboard 2: Overview
-- Monthly Loan Trend (Line Chart)
-- State-wise Loan Distribution (Filled Map)
-- Loan Term Analysis (Donut Chart)
-- Employment Length Analysis (Bar Chart)
-- Loan Purpose Breakdown (Bar Chart)
-- Home Ownership Analysis (Tree Map)
-
-#### Dashboard 3: Details
-- Complete loan-level tabular data
-- Filters for:
-  - Loan Status
-  - State
-  - Loan Purpose
-  - Loan Term
-
----
-
-### Tableau Public Dashboard Link
-View Live Dashboard:  
-https://public.tableau.com/app/profile/dev.dixit2546/viz/BankLoanReport_17747909445300/DETAIL?publish=yes
