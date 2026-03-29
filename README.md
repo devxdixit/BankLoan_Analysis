@@ -157,3 +157,78 @@ SUM(total_payment) AS Amount_Received
 FROM bank_loan_data
 GROUP BY purpose;
 
+
+# 📊 Bank Loan Analysis – Tableau Dashboard
+
+## 📊 Tableau Dashboard Information
+- **Tool:** Tableau Public  
+- **Data Source:** `financial_loan.csv`  
+- **Calculated Fields:**
+  - Month-to-Date (MTD)
+  - Previous Month-to-Date (PMTD)
+  - Month-over-Month (MoM) Growth
+  - Good Loan vs Bad Loan Classification Logic
+
+---
+
+## 📈 Dashboards Created
+
+### 🔹 Dashboard 1: Summary
+This dashboard provides a high-level view of overall loan performance.
+- KPI Cards
+- Total Loan Applications
+- Total Funded Amount
+- Total Amount Received
+- Average Interest Rate
+- Average Debt-to-Income Ratio (DTI)
+- Good Loan vs Bad Loan comparison
+
+---
+
+### 🔹 Dashboard 2: Overview
+This dashboard focuses on trend and categorical analysis.
+- Monthly Loan Trend (Line Chart)
+- State-wise Loan Distribution (Filled Map)
+- Loan Term Analysis (Donut Chart)
+- Employment Length Analysis (Bar Chart)
+- Loan Purpose Breakdown (Bar Chart)
+- Home Ownership Analysis (Tree Map)
+
+---
+
+### 🔹 Dashboard 3: Details
+This dashboard provides granular, loan-level insights.
+- Complete loan-level tabular data
+- Filters available for:
+  - Loan Status
+  - State
+  - Loan Purpose
+  - Loan Term
+
+---
+
+## 🔗 Tableau Public Dashboard Link
+👉 **View Live Dashboard:**  
+https://public.tableau.com/app/profile/dev.dixit2546/viz/BankLoanReport_17747909445300/DETAIL?publish=yes
+
+---
+
+## 🧠 Key Insights
+- Majority of loans are classified as **Fully Paid** or **Current**
+- **Charged-off loans** represent higher financial risk
+- Certain states contribute the highest loan volumes
+- **Debt Consolidation** is the most common loan purpose
+- Borrowers with **longer employment length** show better repayment behavior
+
+---
+
+## 👤 Author
+**Dev Dixit**  
+B.Tech – Computer Science  
+SQL | Tableau | Data Analytics  
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License**.
+
