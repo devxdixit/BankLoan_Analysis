@@ -157,13 +157,12 @@ SUM(total_payment) AS Amount_Received
 FROM bank_loan_data
 GROUP BY purpose;
 
+# Bank Loan Analysis – Tableau Dashboard
 
-# 📊 Bank Loan Analysis – Tableau Dashboard
-
-## 📊 Tableau Dashboard Information
-- **Tool:** Tableau Public  
-- **Data Source:** `financial_loan.csv`  
-- **Calculated Fields:**
+## Tableau Dashboard Information
+- Tool: Tableau Public
+- Data Source: financial_loan.csv
+- Calculated Fields:
   - Month-to-Date (MTD)
   - Previous Month-to-Date (PMTD)
   - Month-over-Month (MoM) Growth
@@ -171,10 +170,10 @@ GROUP BY purpose;
 
 ---
 
-## 📈 Dashboards Created
+## Dashboards Created
 
-### 🔹 Dashboard 1: Summary
-This dashboard provides a high-level view of overall loan performance.
+### Dashboard 1: Summary
+This dashboard provides a high-level overview of loan performance.
 - KPI Cards
 - Total Loan Applications
 - Total Funded Amount
@@ -185,8 +184,8 @@ This dashboard provides a high-level view of overall loan performance.
 
 ---
 
-### 🔹 Dashboard 2: Overview
-This dashboard focuses on trend and categorical analysis.
+### Dashboard 2: Overview
+This dashboard focuses on trend-based and categorical insights.
 - Monthly Loan Trend (Line Chart)
 - State-wise Loan Distribution (Filled Map)
 - Loan Term Analysis (Donut Chart)
@@ -196,8 +195,8 @@ This dashboard focuses on trend and categorical analysis.
 
 ---
 
-### 🔹 Dashboard 3: Details
-This dashboard provides granular, loan-level insights.
+### Dashboard 3: Details
+This dashboard provides detailed, loan-level analysis.
 - Complete loan-level tabular data
 - Filters available for:
   - Loan Status
@@ -207,28 +206,29 @@ This dashboard provides granular, loan-level insights.
 
 ---
 
-## 🔗 Tableau Public Dashboard Link
-👉 **View Live Dashboard:**  
+## Tableau Public Dashboard Link
+View Live Dashboard:  
 https://public.tableau.com/app/profile/dev.dixit2546/viz/BankLoanReport_17747909445300/DETAIL?publish=yes
 
 ---
 
-## 🧠 Key Insights
-- Majority of loans are classified as **Fully Paid** or **Current**
-- **Charged-off loans** represent higher financial risk
-- Certain states contribute the highest loan volumes
-- **Debt Consolidation** is the most common loan purpose
-- Borrowers with **longer employment length** show better repayment behavior
+## Key Insights
+- Majority of loans are Fully Paid or Current
+- Charged-off loans represent higher financial risk
+- Certain states contribute most to overall loan volume
+- Debt Consolidation is the most common loan purpose
+- Borrowers with longer employment length show better repayment patterns
 
 ---
 
-## 👤 Author
-**Dev Dixit**  
+## Author
+Dev Dixit  
 B.Tech – Computer Science  
-SQL | Tableau | Data Analytics  
+Skills: SQL, Tableau, Data Analytics
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License**.
+## License
+This project is licensed under the MIT License.
+
 
