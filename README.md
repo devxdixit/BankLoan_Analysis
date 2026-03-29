@@ -26,21 +26,21 @@ This project addresses these requirements through **SQL-driven KPIs** and **inte
 
 ## Tools & Technologies
 - **SQL** – KPI calculations and aggregations  
-- **Tableau Public** – Interactive dashboards and data storytelling  
+- **Tableau Public** – Interactive dashboards and visual analytics  
 - **CSV Dataset** – Bank loan data  
 
 ---
 
 ## Dataset Information
 - **File Name:** `financial_loan.csv`
-- **Data Type:** Structured loan-level data
+- **Data Type:** Structured loan-level dataset
 - **Granularity:** One row per loan application
 
 ### Key Columns
 - `id` – Loan ID  
 - `issue_date` – Loan issue date  
 - `loan_amount` – Funded loan amount  
-- `total_payment` – Amount received from borrower  
+- `total_payment` – Amount received  
 - `int_rate` – Interest rate  
 - `dti` – Debt-to-Income ratio  
 - `loan_status` – Fully Paid / Current / Charged Off  
@@ -53,7 +53,7 @@ This project addresses these requirements through **SQL-driven KPIs** and **inte
 
 ## Key KPIs Calculated
 - Total Loan Applications  
-- Month-to-Date (MTD) Loan Applications  
+- Month-to-Date (MTD) Applications  
 - Previous Month-to-Date (PMTD) Applications  
 - Total Funded Amount  
 - Total Amount Received  
@@ -65,9 +65,8 @@ This project addresses these requirements through **SQL-driven KPIs** and **inte
 ---
 
 ## SQL Queries Used
-
 ```sql
--- View data
+-- View all data
 SELECT * FROM bank_loan_data;
 
 -- Total Loan Applications
@@ -110,61 +109,3 @@ SELECT
 (COUNT(CASE WHEN loan_status = 'Charged Off' THEN id END) * 100.0)
 / COUNT(id) AS Bad_Loan_Percentage
 FROM bank_loan_data;
-
--- Loan Status Summary
-SELECT 
-loan_status,
-COUNT(id) AS Loan_Count,
-SUM(loan_amount) AS Total_Funded,
-SUM(total_payment) AS Total_Received,
-AVG(int_rate * 100) AS Avg_Interest_Rate,
-AVG(dti * 100) AS Avg_DTI
-FROM bank_loan_data
-GROUP BY loan_status;
-
--- Monthly Trend
-SELECT 
-MONTH(issue_date) AS Month_Number,
-DATENAME(MONTH, issue_date) AS Month_Name,
-COUNT(id) AS Applications,
-SUM(loan_amount) AS Funded_Amount,
-SUM(total_payment) AS Amount_Received
-FROM bank_loan_data
-GROUP BY MONTH(issue_date), DATENAME(MONTH, issue_date)
-ORDER BY Month_Number;
-
--- State-wise Analysis
-SELECT 
-address_state,
-COUNT(id) AS Applications,
-SUM(loan_amount) AS Funded_Amount,
-SUM(total_payment) AS Amount_Received
-FROM bank_loan_data
-GROUP BY address_state;
-
--- Loan Term Analysis
-SELECT 
-term,
-COUNT(id) AS Applications,
-SUM(loan_amount) AS Funded_Amount,
-SUM(total_payment) AS Amount_Received
-FROM bank_loan_data
-GROUP BY term;
-
--- Employee Length Analysis
-SELECT 
-emp_length,
-COUNT(id) AS Applications,
-SUM(loan_amount) AS Funded_Amount,
-SUM(total_payment) AS Amount_Received
-FROM bank_loan_data
-GROUP BY emp_length;
-
--- Loan Purpose Analysis
-SELECT 
-purpose,
-COUNT(id) AS Applications,
-SUM(loan_amount) AS Funded_Amount,
-SUM(total_payment) AS Amount_Received
-FROM bank_loan_data
-GROUP BY purpose;
